@@ -4,3 +4,16 @@ http://blog.csdn.net/chuanj1985/article/details/6873830
 
 apt-get 与 yum的区别 (转) 
 http://blog.csdn.net/mathewsking/article/details/8211273
+
+ [zip文件] putty 工具 pscp.exe等
+http://download.csdn.net/detail/lch_cn/4826579#comment
+
+linux-linux、linux-windows 之间快速传文件 (转)  
+http://blog.163.com/netsafe_liulei@126/blog/static/52990159201191344354246/
+
+
+pscp yum-3.2.29-40.el6.centos.noarch.rpm root@192.168.10.16:/usr/local/citylife
+1qazxsw2
+
+pscp jdk-7u71-linux-x64.rpm root@192.168.10.16:/usr/local/citylife
+
