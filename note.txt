@@ -15,5 +15,35 @@ http://blog.163.com/netsafe_liulei@126/blog/static/52990159201191344354246/
 pscp yum-3.2.29-40.el6.centos.noarch.rpm root@192.168.10.16:/usr/local/citylife
 1qazxsw2
 
-pscp jdk-7u71-linux-x64.rpm root@192.168.10.16:/usr/local/citylife
+pscp rzsz-3.48.tar.gz root@192.168.10.16:/usr/local/citylife
 
+
+CentOS通过命令RZ/SZ传文件，非FTP方式
+http://wapapp.baidu.com/yinyue_yymusic/item/79fd8c33788712b3124b1449
+
+
+去掉"UNREGISTERED COPY"提示
+**** UNREGISTERED COPY *****
+Please read the License Agreement in rz.doc
+解决方法:
+修改Makefile第四行OFLAG= -O 为 OFLAG= -O -DREGISTERED(也可以修改源代码)
+http://cache.baiducontent.com/c?m=9d78d513d9811ff80bacc3690d6797314a0297634d918a4268d4e216c8350c1d0631f4bb56714544849223305de95e5c9bab6a65377260ff8cc9f85dddcc85295fde7a65645bc61f1d895fe9895124b23d8d1facea0ee7cda16ec3f08f869e4353bd0258259daad71a534f9631ae0962a3f7c31351080dbaef3366e25b73349f255db645f3ea37640296f6aa060a9c74&p=c270c54ad5c44ab142fbc7710f7a86&newp=8d7cc64ad4942dec03bd9b7d0a1d97231610db2151d0d71f28b8d013&user=baidu&fm=sc&query=Please+read+the+License+Agreement+in+rz.doc&qid=c330b56500003f32&p1=1
+
+
+tar zxvf rzsz-3.48.tar.gz 
+
+echo $PATH
+
+export PATH=$PATH:.:/usr/java/jdk1.7.0_71/bin::/usr/lib64/qt-3.3/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/usr/local/apache-maven-2.2.1/bin
+
+
+JAVA_HOME=/usr/java/jdk1.7.0_71
+JRE_HOME=/usr/java/jdk1.7.0_71/jre
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
+export PATH JAVA_HOME JRE_HOME CLASSPATH
+
+source /etc/profile 
+source ~/.bash_profile文件使环境变量生效 
+
+检查环境变量，echo $PATH 
