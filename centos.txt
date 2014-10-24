@@ -1,0 +1,245 @@
+系统 centos6.5
+
+1、centos安装wget 
+yum -y install wget
+
+2、常用linux源列表（国内163源）
+my.oschina.net/zphj1987/blog/77875
+
+
+3、centos6 Llinx上安装配置JDK1.7与Tomcat7 （包括常用的编译器和工具）
+http://lrj2u.iteye.com/blog/1326829
+
+4、yum安装rzsz 
+yum -y install lrzsz
+
+5、CentOS yum安装sun Java jre jdk和openjdk
+http://andinker.iteye.com/blog/1972433
+
+
+(
+
+yum install jre-7u6-linux-x64.rpm
+
+6、yum install jdk 的问题 （rpm 安装jdk）
+http://www.51testing.com/html/57/121957-225614.html
+
+写后小注：
+其实注意看官方安装说明这几句：
+The RPM package creates two links: /usr/java/latest and /usr/java/default.
+The /usr/java/latest link will always point to the version of Java that is considered the latest version. Subsequent upgrades of the package will overwrite this value if it is not the latest version.
+ 
+By default, /usr/java/default points to /usr/java/latest.
+ 
+ 
+就可以知道 其实JAVA_HOME 设置为  /usr/java/default 就可以了
+
+设置系统环境变量
+vi /etc/profile
+
+export JAVA_HOME=/usr/java/default
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin；可要可不要的那种
+
+)
+
+
+7、卸载jre （实际上jdk没有安装上，所以java可以，javac不行）
+[root@citylife ~]# ll -lh
+total 53M
+-rw-------. 1 root root  900 Oct 22 13:51 anaconda-ks.cfg
+-rw-r--r--. 1 root root 2.0K Jan 28  2014 CentOS-Base.repo
+-rw-r--r--. 1 root root  146 Oct 22 17:14 Hello.java
+-rw-r--r--. 1 root root 8.9K Oct 22 13:51 install.log
+-rw-r--r--. 1 root root 3.1K Oct 22 13:50 install.log.syslog
+-rw-r--r--. 1 root root 5.2K Mar 21  2012 jdk-7u15-linux-x64.rpm
+-rw-r--r--. 1 root root  53M Aug 11  2012 jre-7u6-linux-x64.rpm
+-rw-r--r--. 1 root root  261 Oct 22 17:10 Test.java
+[root@citylife ~]# rpm -qa |grep jre
+jre-1.7.0_06-fcs.x86_64
+
+
+ rpm -qa |grep jre
+
+7、java可以，javac不行 （因为安装了jre，jdk没有安装成功）
+解决方法：
+
+运行rpm -e jdk，删掉相应的文件。
+
+
+ 8、Linux下which、whereis、locate、find 命令的区别
+ http://blog.chinaunix.net/uid-20554039-id-3035417.html
+
+
+Linux(centos)下安装卸载命令rpm,make install使用方法【转】 
+http://blog.csdn.net/ghj1976/article/details/6159835
+
+
+二.rpm方式安装的卸载方法：
+
+查看是否安装mysql的命令
+rpm -qa | grep mysql
+然后 逐个使用 rpm -e mysq-* 卸载
+如果出现
+error: Failed dependencies:
+libmysqlclient.so.10 is needed by (installed) libdbi-dbd-mysql-0.6.5-10.RHEL4.1.i386
+时，使用 --nodeps 参数，如：
+rpm -e mysqlclient10-devel-3.23.58-4.RHEL4.1 --nodeps
+
+----------------------------------
+
+yum install jre-7u6-linux-x64.rpm
+
+9、rpm 安装指令全 yum 安装 卸载命令 
+http://blog.csdn.net/sunbiao0526/article/details/6883994
+
+rpm -ivh package.rpm 安装一个rpm包 
+ yum install  ～ 安装指定软件包
+
+ yum安装rzsz 
+yum -y install lrzsz
+----------------
+
+yum -y install 包名（支持*） ：自动选择y，全自动
+yum install 包名（支持*） ：手动选择y or n
+yum remove 包名（不支持*）
+rpm -ivh 包名（支持*）：安装rpm包
+rpm -e 包名（不支持*）：卸载rpm包
+
+--------------------------
+
+10、yum和rpm的关系
+rpm 只能安装已经下载到本地机器上的rpm 包. yum能在线下载并安装rpm包,能更新系统,且还能自动处理包与包之间的依赖问题,这个是rpm 工具所不具备的。
+
+-----------------------------
+在 CentOS6 上安装 Tomcat7
+http://batizhao.github.io/linux/2012/07/17/install-tomcat7-on-centos/
+
+1. 下载
+wget http://mirror.bit.edu.cn/apache/tomcat/tomcat-7/v7.0.56/bin/apache-tomcat-7.0.56.tar.gz
+
+2. 安装
+tar -xzvf apache-tomcat-7.0.56.tar.gz
+
+mv apache-tomcat-7.0.56 /opt/tomcat7
+# cd /opt/tomcat7
+# bin/startup.sh 
+
+JAVA_HOME=/usr/java/jdk1.7.0_71
+CATALINA_HOME=/opt/citylife/apache-tomcat-7.0.56
+CATALINA_OPTS="-Xms1024m -Xmx2048m -XX:PermSize=256m -XX:MaxPermSize=512m"
+
+
+mkdir /opt/citylife
+
+curl "http://localhost:8080/aa/index.html"
+
+--------------
+
+linux ps与netstat命令 
+http://blog.csdn.net/kunatnet/article/details/25748327
+ps 命令用于查看当前正在运行的进程。grep 是搜索
+
+   例如： ps -ef | grep java
+
+                 表示查看所有进程里CMD是java的进程信息
+
+    ps -aux | grep java
+
+                 -aux 显示所有状态
+
+
+Netstat命令详解
+http://www.cnblogs.com/hnrainll/archive/2011/10/21/2220518.html
+
+四大命令助你玩转Linux进程管理
+http://os.51cto.com/art/201009/228099.htm
+
+Centos查看端口占用情况和开启端口命令
+http://www.centoscn.com/CentOS/help/2013/0725/558.html
+列出所有端口
+netstat -ntlp  
+
+CentOS/Linux 开放80、8080端口或者开放某个端口 
+http://blog.csdn.net/kobe_lzq/article/details/7977013
+
+
+工作中常用的命令jstat、netstat、lsof、ps和top - Orisun
+http://www.tuicool.com/articles/niuQjy
+
+
+
+
+--------------------------------
+win7访问不了局域网里Linux上的tomcat服务的问题
+
+解决方案：在centos里把iptables关闭即可解决。
+命令：service iptables stop
+http://www.07net01.com/linux/windows_7fangwenxuniji_centos_tomcatfangwenbuliao_10060_1345483640.html
+
+
+--------------
+一键安装Maven/Ant (使用Yum)
+http://flyfoxs.iteye.com/blog/2104523
+wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+
+yum -y install apache-maven
+
+CentOS 下搭建maven仓库
+http://my.oschina.net/u/255289/blog/307143
+
+
+http://192.168.40.184:8080/citylife-prototype-web/api/v1/user/541bf4de9fa52afb78246a26
+
+
+5. 安装centos常用的软件包及工具
+    常见压缩工具 zip unzip bzip2
+[root@localhost ~]# yum -y install unzip zip bzip2 bzip2-devel 
+http://www.linuxidc.com/Linux/2012-10/72750.htm
+
+
+
+----------------
+curl 方式下载压缩包
+curl -O http://downloads.mongodb.org/linux/mongodb-linux-x86_64-2.6.0.tgz
+CentOS 6.5安装二进制版本的MongoDB 2.6 
+http://blog.csdn.net/chszs/article/details/23682727
+
+
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:/opt/citylife/mongodb/bin
+
+------------------------------
+
+六、随机启动
+[root@localhost bin]# vim /etc/rc.local
+在最后增加：
+/opt/citylife/mongodb/bin/mongod --dbpath=/opt/citylife/mongodb/data/db/ --logpath=/opt/citylife/mongodb/logs/mongodb.log --logappend --port=27107 --fork
+
+七、重启centos
+
+[root@localhost bin]# shutdown -r now
+
+
+八、进入mongodb的shell
+
+[root@localhost bin]# ./mongo
+
+九、关闭mongodb
+[root@localhost bin]# pkill mongod 
+或者 killall mongod
+ 不要用kill -9  进程号   如果误用了，看mongodb/data/ 下面有没有mongod.lock，把它删除，再启动
+
+--------------
+
+查询防火墙状态:
+[root@localhost ~]# service   iptables status
+ 
+停止防火墙:
+[root@localhost ~]# service   iptables stop 
+
+CentOS 配置防火墙操作实例（启、停、开、闭端口）
+http://www.linuxidc.com/Linux/2012-06/63111.htm
+
+
+/usr/sbin/nginx -t
+/etc/nginx/nginx.conf

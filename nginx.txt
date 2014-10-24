@@ -1,0 +1,49 @@
+#设定负载均衡列表  
+upstream  backend
+{  
+server 192.168.10.15:8080; 
+server 192.168.10.16:8080;
+}
+
+server {
+listen 80;
+server_name  localhost;
+#对 / 所有做负载均衡 （本机nginx采用完全转发，所有请求都转发到后端的tomcat集群）
+	location / {  
+	root /opt/citylife/apache-tomcat-7.0.56/webapps;
+	index index.jsp index.htm index.html;
+	proxy_redirect off;
+	#保留用户真实信息
+	proxy_set_header Host $host;
+	proxy_set_header  X-Real-IP  $remote_addr;
+	proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_pass  http://backend; 
+	}
+}
+
+
+find / -name nginx
+whereis nginx
+
+------------
+
+/usr/sbin/nginx -t
+/etc/nginx/nginx.conf
+/usr/sbin/nginx -s reload
+
+---------------
+nginx server_name ip
+
+nginx转发不同的域名给不同IP
+http://zhidao.baidu.com/link?url=ytrhruRPqqp5D89lpX0l8vrOGZ-Puof-utSSHcsIEAldYxlUar5JsPPs2SW6YUaCo08Qmd49Ejz3aczGKhvR8K
+
+Nginx+tomcat 配置
+http://piziwang.iteye.com/blog/728930
+
+测试
+http://192.168.10.16/citylife/api/v1/user/541bf4de9fa52afb78246a26
+
+访问日志路径：
+/var/log/nginx
+tail -500f access.log
+

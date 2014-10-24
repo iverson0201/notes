@@ -59,3 +59,6 @@ http://blog.csdn.net/zhuying_linux/article/details/6859286
 http://www.2cto.com/Article/201310/252749.html
 
 命令测试
+
+$ git push origin master
+Username for 'https://github.com': iverson0201
