@@ -243,3 +243,73 @@ http://www.linuxidc.com/Linux/2012-06/63111.htm
 
 /usr/sbin/nginx -t
 /etc/nginx/nginx.conf
+
+
+------
+6、要访问15上面的服务，端口是8080，需开启15这台机器的8080端口
+http://www.cnblogs.com/dkblog/archive/2011/07/06/2099447.html
+http://shmily2038.iteye.com/blog/1838653
+
+vim /etc/sysconfig/iptables
+service iptables restart
+iptables -L
+service iptables status
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+
+
+----------------------
+7、centos安装mongodb的环境 （mongodb正确的安装启动方式）
+http://my.oschina.net/KevinJay/blog/151363
+
+/usr/local/mongodb/bin
+./mongo
+
+
+------------------
+官方文档说明要使用 kill -15，killall mongod或者在client的shell里，use admin，执行db.shutdownServer()即可！
+
+use admin，执行db.shutdownServer()
+http://www.cnblogs.com/buro79xxd/archive/2011/03/23/1993220.html
+ps -ef|grep mongo
+
+
+--------------
+8、centOS上安装redis
+http://www.cnblogs.com/xsi640/p/3756130.html
+
+service XXX does not support chkconfig 
+http://www.cnblogs.com/niocai/archive/2012/07/12/2587780.html
+
+
+
+--------------
+9、全文检索
+
+内存不够，机器内存2G
+wrapper  | JVM exited while loading the application.
+jvm 1    | Error occurred during initialization of VM
+jvm 1    | Could not reserve enough space for object heap
+
+vim elasticsearch.conf 
+#set.default.ES_HEAP_SIZE=2048
+set.default.ES_HEAP_SIZE=1024
+
+./elasticsearch console
+
+/root/elasticsearch-rtf/bin/service/elasticsearch64 console
+
+出现bad interpreter:No such file or directory的原因 
+http://blog.csdn.net/shenkxiao/article/details/7069133
+chmod +777授权可执行后，想让它老人家跑起来，可是就扔"bad interpreter:No such file or directory"这错误了
+vi filename
+然后用命令
+:set ff?
+可以看到dos或unix的字样. 如果的确是dos格式的, 那么你可以用:set ff=unix把它强制为unix格式的, 然后存盘退出. 再运行一遍看.
+
+防火墙开放端口 9200、9300
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 9200 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 9300 -j ACCEPT

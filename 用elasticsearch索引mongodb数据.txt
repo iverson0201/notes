@@ -1,0 +1,89 @@
+CentOS 6.4 下搭建 MongoDB 2.4.9 环境
+http://www.shaoqun.com/a/85470.aspx
+
+-- 插件版本对照
+https://github.com/richardwilly98/elasticsearch-river-mongodb
+MongoDB River Plugin 	ElasticSearch 	MongoDB 
+master			1.3.1 		2.6.3 	
+2.0.1			1.2.2 		2.4.9 -> 2.6.3 	
+2.0.0 			1.0.0 -> 1.1.1 	2.4.9 	
+
+-----------------------
+1、mongodb进阶（2）：副本集 
+http://blog.csdn.net/wutbiao/article/details/22163325
+
+-- mongdb副本集
+--node1.conf
+port = 10001
+dbpath = dbs/node1
+logpath = logs/node1.log
+#添加多个时，直接用逗号分割，如：rset\192.168.90.7:10002,192.168.90.7:10003
+replSet = rset/192.168.10.16:10002
+
+--node2.conf
+port = 10002
+dbpath = dbs/node2
+logpath = logs/node2.log
+#添加多个时，直接用逗号分割
+replSet = rset/192.168.10.15:10001
+
+
+bin/mongod --config conf/node1.conf
+
+bin/mongod --config conf/node2.conf
+
+--连接副本集中的任意机器
+mongo localhost:10001 
+--初始化副本集
+use admin  
+db.runCommand({"replSetInitiate":{"_id":"rset","members":[{"_id":1,"host":"192.168.10.15:10001"},{"_id":2,"host":"192.168.10.16:10002"}]}} )
+
+--测试
+use mydb
+db.c1.insert({age:30})
+db.c1.find()
+
+-- 从库报错，error: { "$err" : "not master and slaveOk=false", "code" : 13435 }
+
+--让从库可以读，分担主库的压力
+db.getMongo().setSlaveOk()
+
+ ps aux|grep mongod
+
+
+
+----------------------
+2、征服 Mongodb 之 主从复制&集群复制
+http://snowolf.iteye.com/blog/1974747
+http://www.chinastor.org/upload/2013-12/13120316433224.pdf
+----------------------
+
+
+------------
+3、用elasticsearch索引mongodb数据
+http://www.cnblogs.com/ciaos/p/3601209.html
+
+curl -XPUT "localhost:9200/_river/mongodb_mytest/_meta" -d ' 
+{
+"type": "mongodb", 
+"mongodb": { 
+"host": "localhost", 
+"port": "10001", 
+"db": "testdb", 
+"collection": "testcollection" 
+}, 
+"index": { 
+"name": "testdbindex", 
+"type": "testcollection"} }'
+
+{"_index":"_river","_type":"mongodb_mytest","_id":"_meta","_version":1,"created":true}'
+
+返回created为true，表示创建成功，也可通过curl "http://localhost:9200/_river/mongodb_mytest/_meta"查看
+
+db.testdb.find()
+
+db.testcollection.find()
+
+------
+elasticsearch命令
+http://www.51document.com/1364910818272.html

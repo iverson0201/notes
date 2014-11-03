@@ -39,7 +39,7 @@ export PATH=$PATH:.:/usr/java/jdk1.7.0_71/bin::/usr/lib64/qt-3.3/bin:/usr/local/
 
 JAVA_HOME=/usr/java/jdk1.7.0_71
 JRE_HOME=/usr/java/jdk1.7.0_71/jre
-PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:/opt/citylife/mongodb
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 export PATH JAVA_HOME JRE_HOME CLASSPATH
 
@@ -62,3 +62,136 @@ http://www.2cto.com/Article/201310/252749.html
 
 $ git push origin master
 Username for 'https://github.com': iverson0201
+
+
+内网地址15：http://192.168.10.15:8080/citylife/api/v1/user/541bf4de9fa52afb78246a26
+内网地址16：http://192.168.10.16:8080/citylife/api/v1/user/541bf4de9fa52afb78246a26
+
+内网地址：http://192.168.10.16/citylife/api/v1/user/541bf4de9fa52afb78246a26
+
+------
+nginx 在16上
+mongodb、redis、Elasticsearch 在15上
+
+
+--------------
+全文检索
+
+内存不够，机器内存2G
+wrapper  | JVM exited while loading the application.
+jvm 1    | Error occurred during initialization of VM
+jvm 1    | Could not reserve enough space for object heap
+
+vim elasticsearch.conf 
+#set.default.ES_HEAP_SIZE=2048
+set.default.ES_HEAP_SIZE=1024
+
+ ./elasticsearch console
+
+----------
+mongoVUE, 可以选择使用本地时区
+Tools ---> Preferences ---> Views ---> Local Timezone
+
+
+mongoTemplate.updateEntity(query(where("id").is(id)), update("title", params.get("title")));
+
+-----------------
+-- windows下连，centos端mongodb服务，连接被拒绝
+Unable to connect to server mongodb
+mongodb 遇到 mongodb couldn't connect to server 127.0.0.1 shell/mongo.js错误时 
+http://blog.csdn.net/emmetyoung/article/details/7340861
+
+
+
+-------------
+Find in Json
+{
+"replyFollow.headImage" : "tp01.jpg"
+}
+Enter Update Json
+{
+$set: {"replyFollow.headImage" : "http://legendtech-video.qiniudn.com/938320141028175322.png"}
+}
+
+------------
+Find in Json
+{
+"backer.headImage" : "tp01.jpg"
+}
+Enter Update Json
+{
+$set: {"backer.headImage" : "http://legendtech-video.qiniudn.com/938320141028175322.png"}
+}
+
+{
+"images" : "http://legendtech-video.qiniudn.com/938320141028175322.png"
+}
+
+
+-------------
+2014.11.03
+CentOS 6.4 下搭建 MongoDB 2.4.9 环境
+http://www.shaoqun.com/a/85470.aspx
+
+
+MongoDB River Plugin 	ElasticSearch 	MongoDB 
+master			1.3.1 		2.6.3 	
+2.0.1			1.2.2 		2.4.9 -> 2.6.3 	
+2.0.0 			1.0.0 -> 1.1.1 	2.4.9 	
+
+
+-----------------------
+mongodb进阶（2）：副本集 
+http://blog.csdn.net/wutbiao/article/details/22163325
+
+-- mongdb副本集
+--node1.conf
+port = 10001
+dbpath = dbs/node1
+logpath = logs/node1.log
+#添加多个时，直接用逗号分割，如：rset\192.168.90.7:10002,192.168.90.7:10003
+replSet = rset/192.168.10.16:10002
+
+--node2.conf
+port = 10002
+dbpath = dbs/node2
+logpath = logs/node2.log
+#添加多个时，直接用逗号分割
+replSet = rset/192.168.10.15:10001
+
+
+bin/mongod --config conf/node1.conf
+
+bin/mongod --config conf/node2.conf
+
+--连接副本集中的任意机器
+mongo localhost:10001 
+--初始化副本集
+use admin  
+db.runCommand({"replSetInitiate":{"_id":"rset","members":[{"_id":1,"host":"192.168.10.15:10001"},{"_id":2,"host":"192.168.10.16:10002"}]}} )
+
+--测试
+use mydb
+db.c1.insert({age:30})
+db.c1.find()
+
+-- 从库报错，error: { "$err" : "not master and slaveOk=false", "code" : 13435 }
+
+--让从库可以读，分担主库的压力
+db.getMongo().setSlaveOk()
+
+ ps aux|grep mongod
+
+
+ ---------------
+
+ 3、启动elasticsearch 
+ sh elasticsearch start
+
+ 4、下载river插件
+./plugin --install com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/2.0.0
+
+
+执行shell出现bad interpreter
+http://blog.chinaunix.net/uid-25052030-id-94244.html
+用set ff=unix把它强制为unix格式的
