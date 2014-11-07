@@ -195,3 +195,88 @@ db.getMongo().setSlaveOk()
 执行shell出现bad interpreter
 http://blog.chinaunix.net/uid-25052030-id-94244.html
 用set ff=unix把它强制为unix格式的
+
+
+5、列出所有端口 
+netstat -ntlp
+
+6、查找命令
+find / -name "*tomcat*";
+
+7、开发流程与各层软件选型
+http://www.cnblogs.com/littlehb/archive/2013/05/10/3071176.html
+
+
+8、./configure,make,make install的作用
+http://www.linuxidc.com/Linux/2011-02/32211.htm
+
+怎么卸载用 make install 编译安装的软件？ 
+http://www.zhihu.com/question/20092756
+
+head logs/catalina.out  
+
+-----------
+9、yum不能更新下载的问题 （ Couldn't resolve host 'yum.mariadb.org' ）
+yum 安装时错误 Errno 14 Couldn't resolve host 解决办法 
+http://blog.csdn.net/spyiu/article/details/25163101
+修改一下 /etc/resolv.conf
+
+添加一个nameserver 8.8.8.8完成
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+
+
+yum install openssl openssl-devel -y 
+
+
+10、tomcat的apr测试在15上
+
+11、用elasticsearch索引mongodb数据 （重点）
+http://www.cnblogs.com/ciaos/p/3601209.html
+
+
+
+12、centos安装ab
+
+yum install httpd-tools
+
+准备之后我们就可以测试了
+
+ab -kc 1000 -n 10000 http://192.168.10.16/citylife/api/v1/user/541bf4de9fa52afb78246a26
+
+
+13、tomcat启动警告
+'maxSpareThreads' to '2048' did not find a matching property
+
+Tomcat性能调优后， 启动出现警告问题 [did not find a matching property.] 
+解释：在配置tomcat的SSL双向握手中，由于6.0.36版本中默认启用了APR（APR是通过JNI访问的可移植库，可以提高Tomcat的性能和伸缩性），所以采用传统的配置方式会报异常
+
+Tomcat7不支持maxSpareThreads，去掉即可
+http://mclulu33.blog.163.com/blog/static/20091017720143286347742/
+
+
+
+@ModelAttribute
+@Component
+@Transactional(readOnly = true)
+@RequiresPermissions("topic:view")
+
+
+---------
+1、关注点不能太多，POI数据不能和餐饮、购物等数据混在一起。
+2、餐饮、购物依赖POI对象。
+3、点击详情，加载 餐饮 + POI 数据。（需要多少，加载多少）
+
+领域对象，关注点分离
+
+【重构笔记04】重新组织数据（我好像明白了什么是数据与行为分离）
+http://www.cnblogs.com/yexiaochai/p/3397767.html
+领域驱动设计和实践
+http://kb.cnblogs.com/page/112298/
+UML之JUDE{Astah}使用介绍
+http://www.cnblogs.com/boonya/archive/2013/03/17/2964650.html
+好东西
+http://runjs.cn/
+mysql建表时key关键字的作用是什么？
+http://www.oschina.net/question/203016_71920?sort=time
