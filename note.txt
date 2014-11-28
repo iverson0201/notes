@@ -280,3 +280,114 @@ http://www.cnblogs.com/boonya/archive/2013/03/17/2964650.html
 http://runjs.cn/
 mysql建表时key关键字的作用是什么？
 http://www.oschina.net/question/203016_71920?sort=time
+
+
+4、hibernate事务问题 Queries leading to data modification are not allowed
+read_only="true"
+Connection is read-only. Queries leading to data modification are not allowed
+http://liukai.iteye.com/blog/359607
+
+@Transactional(readOnly = false)
+public void delete(String id) {
+		// TODO Auto-generated method stub
+		topicDao.deleteById(id);
+	}
+
+
+
+----------
+2014.11.07
+升级jar包，有冲突，因为referenced libraries下有一份旧的jar包
+Duplicate fragment name，spring-web jar包冲突，删除referenced libraries下的所有jar包
+org/springframework/objenesis/ObjenesisStd
+taglib.jsp，缺少jstl标签，spring-webmvc的form标签，添加jstl-1.2.jar和spring-webmvc-4.1.1.RELEASE.jar到referenced libraries下
+
+
+elasticsearch索引mongodb数据
+
+
+-------------------
+39、商家评论、点评 POST
+"poiId" : "543e378c9fa5af869ee2d45e"
+{
+ "content" : "评论001",
+ "images" : [ "pltp1.png", "pltp2.png" ],
+ "comment" :
+      {
+	"userId" : "541bf4de9fa52afb78246a26",
+	"userName" : "评论人005",
+	"headImage" : "http://legendtech-video.qiniudn.com/11.jpg"
+      },
+ "poiId" : "543e378c9fa5af869ee2d45e",
+ "poiImage" : "ywds.jpg"
+}
+http://192.168.40.184:8080/citylife/api/v1/poi/comment/{poiId}
+
+字段冗余问题，返回信息包含：
+ "name" : "欲望都市",
+ "type" : "酒吧",
+ "address" : "蓝色港湾国际商区LW16号",
+ "marks" : ["夏威夷披萨","迷情沙漠"]
+
+
+---创建java项目 
+mvn archetype:create -DgroupId=com.citylife.backend -DartifactId=citylife-jar -DarchetypeArtifactId=maven-archetype-quickstart
+
+---创建web项目
+mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.citylife.backend -DartifactId=citylife--test-web2
+
+
+--shiro filter filterChainDefinitions
+http://dwangel.iteye.com/blog/1890524
+http://blog.csdn.net/clj198606061111/article/details/24185023
+http://www.ibm.com/developerworks/cn/opensource/os-cn-shiro/
+没错。 我的Realm配置了加密器的。 MD5单向加密，你看spring-shior.xml就知道了。 
+http://yingzhuo.iteye.com/blog/1709002 shiro Realm配置 加密
+
+shiro url授权
+
+shiro怎么进行URL授权
+http://www.iteye.com/problems/94523
+
+shiro 基于URL的授权验证
+
+shiro根据角色来进行权限验证，后台新增了一个角色后，每次都要去更新shiro.ini
+http://www.oschina.net/question/948439_165825
+
+拦截类型
+http://zgzty.blog.163.com/blog/static/838312262012897502193/
+
+
+让Apache Shiro保护你的应用 
+http://www.infoq.com/cn/articles/apache-shiro
+
+
+
+http://192.168.40.184:8090/citylife/api/v1/poi/comment/list/543e378c9fa5af869ee2d45e?size=10&page=1
+
+http://192.168.40.184:8090/citylife/api/v1/poi/reply/list/546461721f8fe9bdc0e0af44?size=10&page=1
+
+
+
+aop相关
+http://git.oschina.net/search?utf8=%E2%9C%93&search=aop&group_id=&project_id=4253
+主题：学习Spring必学的Java基础知识(1)----反射
+http://www.iteye.com/topic/1123081
+AOP 那点事儿
+http://my.oschina.net/huangyong/blog/161338
+
+
+E:\project\citylife-prototype-web>mvn dependency:tree -Dverbose > "e:\project\a
+.txt"
+
+--1128
+Shiro 那点事儿
+http://my.oschina.net/huangyong/blog/208783
+
+将 Shiro 作为应用的权限基础 五：SpringMVC+Apache Shiro+JPA（hibernate）整合配置 
+http://blog.csdn.net/tch918/article/details/13887189
+
+SpringMVC整合Shiro 
+http://blog.csdn.net/jadyer/article/details/12208847
+
+

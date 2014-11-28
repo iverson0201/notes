@@ -28,12 +28,16 @@ logpath = logs/node2.log
 replSet = rset/192.168.10.15:10001
 
 
-bin/mongod --config conf/node1.conf
+cd /usr/local/mongodb
 
-bin/mongod --config conf/node2.conf
+主 15：bin/mongod --config conf/node1.conf
+从 16：bin/mongod --config conf/node2.conf
+
+ ./mongo localhost:10001
 
 --连接副本集中的任意机器
 mongo localhost:10001 
+
 --初始化副本集
 use admin  
 db.runCommand({"replSetInitiate":{"_id":"rset","members":[{"_id":1,"host":"192.168.10.15:10001"},{"_id":2,"host":"192.168.10.16:10002"}]}} )
@@ -63,7 +67,7 @@ http://www.chinastor.org/upload/2013-12/13120316433224.pdf
 3、用elasticsearch索引mongodb数据
 http://www.cnblogs.com/ciaos/p/3601209.html
 
-curl -XPUT "localhost:9200/_river/mongodb_mytest/_meta" -d ' 
+curl -XPUT "localhost:9200/_river/mongodb_mytest/2_meta" -d ' 
 {
 "type": "mongodb", 
 "mongodb": { 
@@ -87,3 +91,89 @@ db.testcollection.find()
 ------
 elasticsearch命令
 http://www.51document.com/1364910818272.html
+
+---------------------
+curl -XPUT "localhost:9200/_river/mongodb_mytest/_meta" -d ' 
+{
+"type": "mongodb", 
+"mongodb": { 
+"host": "localhost", 
+"port": "10001", 
+"db": "testdb", 
+"collection": "shopping" 
+}, 
+"index": { 
+"name": "testdbindex", 
+"type": "shopping"} } '
+
+http://192.168.10.15:9200/testdbindex/_search?q=name:aa11
+
+curl -XGET 'http://localhost:9200/testdbindex/_search?q=name:stone'
+
+
+
+
+curl -XPUT "localhost:9200/_river/mongodb/_meta" -d '  
+{  
+  type: "mongodb",  
+  mongodb: {   
+    db: "test",   
+    host: "localhost",   
+    port: "10001",   
+    collection: "testdb",  
+    fields:"title,content",  
+    gridfs: "true",  
+    local_db_user: "admin",  
+    local_db_password:"admin",  
+    db_user: "user",  
+    db_password:"password"  
+  },   
+  index: {   
+    name: "test",   
+    type: "type",  
+    bulk_size: "1000",   
+    bulk_timeout: "30"  
+  }  
+} ' 
+
+curl -XPUT "localhost:9200/_river/mongodb/_meta" -d '  
+
+
+
+通过切词，可以得到关键字，问题：
+中文是通过组合表达意思的，如果有：天空，天气，天上，天津等词语，是让这些词分别作为index呢，还是，把天作为index，然后后面再分别以后面的作为第二级index？
+
+假如有个人需要表达能力有问题，搜索引擎能理解他的意思吗。到最后还是采用统计词库，最大输出供他选择，空间换时间
+
+你现在空是一个词 气势一个词
+各自找个字的 
+合并起来 并不是空气
+
+
+db.shopping.save({name:"aa11"})
+
+curl -XGET 'http://localhost:9200/testdbindex22/_search?q=name:aa11'
+
+
+-----------------
+elasticsearch 口水篇（2）CRUD Sense
+http://www.cnblogs.com/huangfox/p/3541714.html
+
+
+
+
+curl -XPOST "http://localhost:9200/_search" -d '
+{
+    "query": {
+        "filtered": {
+            "query": {
+                "query_string": {
+                    "query": "drama"
+                }
+            },
+            "filter": {
+                "term": { "year": 1962 }
+            }
+        }
+    }
+}'
