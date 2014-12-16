@@ -33,7 +33,8 @@ cd /usr/local/mongodb
 主 15：bin/mongod --config conf/node1.conf
 从 16：bin/mongod --config conf/node2.conf
 
- ./mongo localhost:10001
+cd /usr/local/mongodb/bin
+./mongo localhost:10001
 
 --连接副本集中的任意机器
 mongo localhost:10001 

@@ -390,4 +390,14 @@ http://blog.csdn.net/tch918/article/details/13887189
 SpringMVC整合Shiro 
 http://blog.csdn.net/jadyer/article/details/12208847
 
+citylife2188
+
+--1216
+file:///D:/citylife_prd/%E5%90%8E%E5%8F%B0%E5%8E%9F%E5%9E%8B/%E5%90%8E%E5%8F%B0%E5%8E%9F%E5%9E%8B/index.html#p=poi%E5%88%86%E7%B1%BB%E7%AE%A1%E7%90%86
+
+file:///D:/citylife_prd/%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B/V1.1/index.html#p=%E4%B8%AA%E4%BA%BA%E9%A1%B5%EF%BC%88%E5%88%86%E4%BA%AB%E9%A1%B5%EF%BC%89
+
+http://tieba.baidu.com/p/2909148389
+
+https://192.168.10.20/svn/citylife_app_dev/trunk/src/server/citylife-jar/
 
