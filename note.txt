@@ -336,6 +336,8 @@ mvn archetype:create -DgroupId=com.citylife.backend -DartifactId=citylife-jar -D
 ---创建web项目
 mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.citylife.backend -DartifactId=citylife--test-web2
 
+mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.sishuok -DartifactId=MockRest
+
 
 --shiro filter filterChainDefinitions
 http://dwangel.iteye.com/blog/1890524
@@ -401,3 +403,86 @@ http://tieba.baidu.com/p/2909148389
 
 https://192.168.10.20/svn/citylife_app_dev/trunk/src/server/citylife-jar/
 
+-- 1217
+自定义注解的使用
+对某个方法进行自定义注解：反射类对象，判断是否有注解，执行注解方法里面的操作。
+
+java.lang.Package.getAnnotation()方法实例
+http://www.yiibai.com/java/lang/package_getannotation.html
+
+--1218
+eclipse加速之禁用JS、jsp等文件的语法验证
+http://www.th7.cn/Program/java/201409/275100.shtml
+Eclipse很卡的解决方法  
+http://daizhenghua.good.blog.163.com/blog/static/105287726201362734241902/
+
+
+--1222 elasticsearch 关键字
+elasticsearch 实现联想输入搜索
+http://www.656463.com/article/22Ibqu.htm
+ElasticSearch Bulk,Search操作
+http://hi.baidu.com/donlian
+全文搜索之 Elasticsearch 
+http://symphony.b3log.org/article/1403514935887
+
+
+
+
+网上搜了一下，说是clustername 制定错误。用http://localhost:9200/_cluster/health/ 查看了一下
+http://www.chepoo.com/org-elasticsearch-client-transport-no-node-available-exception.html
+
+--1225
+使用elasticsearch遇到的一些问题以及解决方法（不断更新）
+http://itindex.net/detail/51176-elasticsearch-%E9%97%AE%E9%A2%98-%E6%96%B9%E6%B3%95
+
+
+----------
+--1230
+maven的Missing artifact问题解决 
+http://blog.csdn.net/liyangmengyao/article/details/27704953
+
+ 解决方案：在报错的firstweb项目pom.xml 文件中添加插件
+                       <plugin>
+                               <groupId>org.apache.felix</groupId>
+                              <artifactId>maven-bundle-plugin</artifactId>
+                              <version>2.4.0</version>
+                              <extensions>true</extensions>
+                    </plugin>
+      这样就可以了~~
+
+Maven 那点事儿
+http://my.oschina.net/huangyong/blog/194583
+
+--1231
+http://www.devstore.cn/code/list/dl44-dt60-pn1-or0.html DevStore 源码列表
+最近一直在研究java一些核心的设计，发现两篇好文章，推荐下。
+http://www.oschina.net/question/184206_218259
+
+--分词
+ElasticSearch OSChina
+http://www.oschina.net/search?scope=project&tag1=0&tag2=0&lang=0&os=0&q=ElasticSearch&p=2
+Java中文分词组件 word
+http://www.oschina.net/p/word
+photon/src/test/java/de/komoot/photon/ESBaseTester.java
+https://github.com/komoot/photon/blob/master/src/test/java/de/komoot/photon/ESBaseTester.java
+ElasticSearch 项目搜索
+http://git.oschina.net/search?utf8=%E2%9C%93&search=ElasticSearch&group_id=&project_id=118339
+
+【Java线程】Java内存模型总结 
+http://blog.csdn.net/vking_wang/article/details/8574376
+
+黄勇 	
+http://my.oschina.net/huangyong/blog/194583
+
+MockMvc
+ 加速Java应用开发速度3——单元/集成测试+CI 
+http://jinnianshilongnian.iteye.com/blog/1893135
+Spring MVC测试框架详解——服务端测试
+http://jinnianshilongnian.iteye.com/blog/2004660
+
+ios 消息推送 极光推送
+
+Spring MVC 单元测试 
+http://blog.csdn.net/webrobot/article/details/18405803
+Spring MVC测试框架详解——服务端测试
+http://www.kankanews.com/ICkengine/archives/103341.shtml
