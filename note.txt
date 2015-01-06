@@ -336,7 +336,7 @@ mvn archetype:create -DgroupId=com.citylife.backend -DartifactId=citylife-jar -D
 ---创建web项目
 mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.citylife.backend -DartifactId=citylife--test-web2
 
-mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.sishuok -DartifactId=MockRest
+mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.iverson -DartifactId=DataStructure
 
 
 --shiro filter filterChainDefinitions
