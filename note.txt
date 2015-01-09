@@ -486,3 +486,25 @@ Spring MVC 单元测试
 http://blog.csdn.net/webrobot/article/details/18405803
 Spring MVC测试框架详解——服务端测试
 http://www.kankanews.com/ICkengine/archives/103341.shtml
+
+--0104
+技术干货
+http://lzxz1234.github.io/categories.html
+github.com/lzxz1234/
+
+--0105
+mockMvc、restApi 测试
+github
+https://github.com/khoubyari/spring-boot-rest-example/blob/master/src/test/java/com/khoubyari/example/test/HotelControllerTest.java
+如何为 SpringMVC 编写单元测试：REST API 篇
+http://lzxz1234.github.io/junit/2014/07/16/Unit-Testing-of-Spring-MVC-Controllers-REST-API/
+基于Spring-WS的Restful API的集成测试
+http://ningandjiao.iteye.com/blog/1982635
+
+--0108
+metrics 导致项目启动过慢
+16:36:49.464 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [class org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:36:49.510 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'metricsConfig' of type [class com.citylife.backend.metrics.MetricsConfig$$EnhancerBySpringCGLIB$$38ef4f25] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:36:49.510 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration' of type [class com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration$$EnhancerBySpringCGLIB$$dbbff955] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:36:49.557 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getMetricRegistry' of type [class com.codahale.metrics.MetricRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:36:49.573 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getHealthCheckRegistry' of type [class com.codahale.metrics.health.HealthCheckRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
