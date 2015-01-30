@@ -47,3 +47,23 @@ http://192.168.10.16/citylife/api/v1/user/541bf4de9fa52afb78246a26
 /var/log/nginx
 tail -500f access.log
 
+
+
+centos直接yum安装nginx
+http://shmily2038.iteye.com/blog/1860063
+
+1、CentOS 6，先执行：
+rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
+2，查看yum的nginx信息
+
+[]# yum info nginx
+
+3，安装并启动nignx
+[root@server ~]# yun install nignx
+[root@server ~]# service nginx start
+Starting nginx:                                            [  OK  ]
+
+4，然后进入浏览器，输入http://182.92.1.110/测试，如果看到
+
+linux下安装nginx
+http://www.cnblogs.com/kunhu/p/3633002.html

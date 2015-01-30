@@ -508,3 +508,156 @@ metrics 导致项目启动过慢
 16:36:49.510 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration' of type [class com.ryantenney.metrics.spring.config.annotation.DelegatingMetricsConfiguration$$EnhancerBySpringCGLIB$$dbbff955] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 16:36:49.557 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getMetricRegistry' of type [class com.codahale.metrics.MetricRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
 16:36:49.573 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'getHealthCheckRegistry' of type [class com.codahale.metrics.health.HealthCheckRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+--0109
+Java不同压缩算法的性能比较
+http://it.deepinmind.com/java/2015/01/04/performance-general-compression.html
+
+玄妙的设计模式 
+http://blog.csdn.net/Raptor/article/details/4933667
+
+把《编程珠玑》读薄
+http://www.hawstein.com/posts/make-thiner-programming-pearls.html
+
+建筑的永恒之道----道 
+http://blog.csdn.net/tiewen/article/details/8697093
+
+
+--0113
+玄妙的设计模式 
+http://blog.csdn.net/Raptor/article/details/4933667
+如何清晰地思考：近一年来业余阅读的关于思维方面的知识结构整理（附大幅思维导图） 
+http://blog.csdn.net/pongba/article/details/3549560
+
+--0115
+使用Mongo Connector和Elasticsearch实现模糊匹配
+http://www.csdn.net/article/2014-09-02/2821485-how-to-perform-fuzzy-matching-with-mongo-connector
+程序员必须知道的10大基础实用算法及其讲解 
+http://blog.csdn.net/lb891014/article/details/34090301
+快课网  架构设计 
+http://www.cricode.com/category/design/architecture
+java 中 mongodb的各种操作 模糊查询
+http://www.cnblogs.com/ry123/p/3863155.html
+
+
+如何设计MongoDB数据模型 
+http://favccxx.blog.51cto.com/2890523/1547217
+http://blog.51cto.com/tagindex.php?keywords=mongodb&keyword=mongodb&job=&jobs=&page=8
+mongodb中的数据建模 
+http://caizi.blog.51cto.com/5234706/1542484
+写给MongoDB开发者的50条建议Tip1 
+http://virusswb.blog.51cto.com/115214/793135
+从关系型数据库到非关系型数据库
+http://7399921.blog.51cto.com/7389921/1584568
+详解基于MongoDB的地理位置查询，结合Symfony2演示
+http://henter.me/post/mongodb-geospatial-query-symfony2-demo.html
+
+mongodb连接查询的一种方式：查出10条数据，in拼接userCommentId，查询user表
+
+
+--0116
+List ADD时去除重复对象代码 
+http://blog.csdn.net/yy_2011/article/details/7217618
+
+--0121
+为什么选择MongoDB数据库
+http://www.aseoe.com/show-72-438-1.html
+
+MongoDB的使用学习之（七）MongoDB的聚合查询（两种方式）附项目源码 
+http://www.cnblogs.com/ontheroad_lee/p/3756247.html
+
+vim /etc/rc.d/init.d
+vim /sbin/service 
+cd /etc/init.d
+chkconfig --add tomcatd
+chkconfig --list
+
+
+http://192.168.40.184:8088/citylife-boss/admin
+
+http://182.92.1.110:8090/boss/admin
+
+centos直接yum安装nginx
+http://shmily2038.iteye.com/blog/1860063
+
+1、CentOS 6，先执行：
+rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
+2，查看yum的nginx信息
+
+[]# yum info nginx
+
+3，安装并启动nignx
+[root@server ~]# yun install nignx
+[root@server ~]# service nginx start
+Starting nginx:                                            [  OK  ]
+
+4，然后进入浏览器，输入http://182.92.1.110/测试，如果看到
+
+linux下安装nginx
+http://www.cnblogs.com/kunhu/p/3633002.html
+
+http://182.92.1.110:8090/boss/admin
+
+mongdb异常
+WARNING: Unable to register MBean org.mongodb.driver:type=ConnectionPool
+
+
+
+http-bio-8090-exec-5" java.lang.OutOfMemoryError: PermGen space
+内存泄露java.lang.OutOfMemoryError: PermGen space解决办法
+http://www.07net01.com/zhishi/261769.html
+直接处理方式是
+JAVA_OPTS="-server -Xms256m -Xmx1024m -XX:MaxNewSize=256m -XX:PermSize=64M -XX:MaxPermSize=128M" 
+
+关于jvm的解释
+
+我看好多人并不设置这个MaxNewSize参数 请问这个参数有什么用？
+
+这参数是设置JAVA堆区域新生代内存的最大可分配大小。一般堆区会分为3个区域，新生代、中生代和老年代。
+我们在程序中通过new关键字新建出来的对象，一般都会分配在新生代中。当新生代满了后，JVM会通过GC来进行一次小规模的垃圾回收，此时新生代中存活的对象会被移动至中生代。
+你所说的这个参数就是设置新生代的最大值，从上可知，这个大小也间接决定了JVM进行monior gc的频率。如果你不设置，JVM启动时会给它一个默认值。
+
+追问
+
+那perm size 和heap size 哪个是中生代 哪个是老生代？
+
+回答
+
+perm size 指的是永久代，也就是方法区，和我们通常说的堆区(heap)有一些区别，堆区中存放的是new出来的对象，方法区存的是类的信息、静态属性、常量池等信息。
+而heap size指的就是堆区了，堆区里面包含新生代、中生代和老年代。
+所以perm size不指中生代和老年代，perm size代表的是方法区，heap size里面包含了中生代和老年代
+
+深入Java虚拟机之虚拟机体系结构
+http://yshjava.iteye.com/blog/1327778
+java里的静态变量是放在了堆内存还是栈内存？
+http://bbs.csdn.net/topics/370001490
+--0128
+拼音 --- oschina
+http://www.oschina.net/search?scope=project&tag1=0&tag2=0&lang=0&os=0&q=%E6%8B%BC%E9%9F%B3&p=1
+ElasticSearch --- oschina
+http://git.oschina.net/search?utf8=%E2%9C%93&search=ElasticSearch
+
+
+--0130
+Collections.sort() 对 List <对象>排序
+http://jiake.iteye.com/blog/207038
+
+http://www.zhihu.com/search?q=ajoo&type=question
+名著类 - ajoo
+http://www.blogjava.net/ajoo/category/6968.html
+领域模型的种种观点
+http://blog.csdn.net/soleghost/article/details/629048
+使用 Google Guava 美化你的 Java 代码：1~4
+http://my.oschina.net/leejun2005/blog/172328
+Elasticsearch 权威指南（中文版）
+http://looly.gitbooks.io/elasticsearch-the-definitive-guide-cn/content/030_Data/25_Update.html
+
+JAVA工具集 common-tools
+ github地址在：https://github.com/looly/common-tools 
+ http://my.oschina.net/looly/blog/109363
+ 原	荐	简化你的 java 字符串操作：Guava 之 CharMatcher 用法简介
+ http://my.oschina.net/leejun2005/blog/178569
+ 使用 Google Guava 美化你的 Java 代码：1~4 
+http://blog.csdn.net/wisgood/article/details/13297535
+瓜娃之走马观花 (1) - List和Map (ajoo)
+http://ajoo.iteye.com/blog/735368 
