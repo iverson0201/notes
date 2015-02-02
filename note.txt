@@ -665,4 +665,14 @@ http://ajoo.iteye.com/blog/735368
 --0202
 Database name must only contain letters, numbers, underscores and dashes!
 ${mongo.dbname} 配置解析报错，是因为 "mongo.dbname=citylife0130" 这个值里面有空格
+pp书屋
+https://3cvpkfx4gdnkcduj.onion.cab/search.php
 
+针对JFinal无get和set的一点看法
+http://www.oschina.net/question/723516_84138?sort=default&p=1#answers
+一个普通的手机IM工具，其后台架构如何设计？
+http://www.oschina.net/question/1242744_156747
+mongodb安装并与Jfinal整合
+http://www.cnblogs.com/super-d2/p/3657081.html
+java文件上传fileupload 
+http://blog.csdn.net/a385833253/article/details/6201013
