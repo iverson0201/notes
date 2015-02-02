@@ -661,3 +661,8 @@ JAVA工具集 common-tools
 http://blog.csdn.net/wisgood/article/details/13297535
 瓜娃之走马观花 (1) - List和Map (ajoo)
 http://ajoo.iteye.com/blog/735368 
+
+--0202
+Database name must only contain letters, numbers, underscores and dashes!
+${mongo.dbname} 配置解析报错，是因为 "mongo.dbname=citylife0130" 这个值里面有空格
+
