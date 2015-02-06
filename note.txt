@@ -676,3 +676,52 @@ mongodb安装并与Jfinal整合
 http://www.cnblogs.com/super-d2/p/3657081.html
 java文件上传fileupload 
 http://blog.csdn.net/a385833253/article/details/6201013
+
+
+--0204
+屏蔽了数据库，那怎么优化数据库，不优化数据库，怎么保证系统的性能？
+屏蔽了数据库，那么数据库优化就基本不起作用，也就不需要了，问这个问题的人思维中有一个潜意识，软件系统都必须依靠数据库优化的，这其实是误区。
+
+正如猫所说的，但我们将业务都变成一个业务对象，并且运行在内存中时，缓存和内存是对业务系统最好的优化，当然，优化数据库也会起到作用，不过这种作用的用处就不是很大，属于微调，不能上升为架构设计高度了。
+http://www.jdon.com/33843/5
+多表查询改为多个对象在内存中进行组合，关系数据库的多表查询更有弱点，否则google就会用关系数据库多表查询来做搜索引擎，使用关系数据库做全文搜索简直是恶梦
+
+
+http://www.zhihu.com/question/22940311 解道的彭晨阳（Banq）是Java顶级高手吗？
+http://www.jdon.com/35102 算法还是最重要的
+http://www.jdon.com/29356  昨天的面试题，请指教
+昨天去面试，问到了一个接口问题，为什么接口中定义的变量必须为常量？请指点！
+我只知道这是Java规定，另外接口是行为抽象，不是属性抽象。
+
+http://www.zhihu.com/question/19910358 如何阅读Tomcat源代码？
+
+http://www.zhihu.com/question/27714559 jQuery源码中有哪些奇技淫巧？
+
+http://www.cnblogs.com/aaronjs/ 前端数据结构与算法系列
+
+http://www.zhihu.com/question/27590048 现在有这样一个需求，在一秒中有3万的支付订单请求，有什么比较好的解决方案吗？
+
+http://www.jdon.com/36063 关于缓存的思考
+
+--0205
+大熊君学习html5系列之------WebStorage（客户端轻量级存储方案）
+http://passport.cnblogs.com/login.aspx?ReturnUrl=http://www.cnblogs.com/bigbearbb/p/4272021.html
+jQuery技术交流群规在线地址 http://t.cn/RZHZMRx
+
+实体模型一般都可能是可变的，这不同于天生不变的值对象，实体对象中都有可变的状态，因此需要常驻内存，
+这样下次请求才能找到上次修改的那个实体对象，因此缓存对于实体是必须的。因此在这个环节对实体进行注射，不影响实体对象的普通创建。
+
+
+--0206
+
+《设计模式的艺术——软件开发人员内功修炼之道》重磅来袭！ 
+http://blog.csdn.net/lovelion/article/details/8308966
+http://www.zhihu.com/question/25372706 Java 有哪些不好的设计？
+
+http://www.zhihu.com/question/23277575 Spring IoC有什么好处呢？
+
+http://article.yeeyan.org/view/74403/100716 正确的呼吸方法 
+http://blog.163.com/zsq303288862@126/blog/static/93745961201262652231478/ mvc:annotation-driven  
+
+前后端分离端nodejs mongodb express后台spring restfui webservice，mybatis mysql这样适合中大型应用吗？
+http://www.zhihu.com/question/26835139 
