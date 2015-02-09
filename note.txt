@@ -725,3 +725,17 @@ http://blog.163.com/zsq303288862@126/blog/static/93745961201262652231478/ mvc:an
 
 前后端分离端nodejs mongodb express后台spring restfui webservice，mybatis mysql这样适合中大型应用吗？
 http://www.zhihu.com/question/26835139 
+
+--0209
+Java程序员在写SQL程序时候常犯的10个错误
+http://database.ctocio.com.cn/350/12699350.shtml
+美团网：MySQL索引原理及慢查询优化
+http://database.ctocio.com.cn/273/13146273.shtml
+优化临时表使用 SQL语句性能提升100倍
+http://database.ctocio.com.cn/420/12734920.shtml
+MySQL的101个调节和优化的提示
+http://database.ctocio.com.cn/88/12784588.shtml
+大数据应用程序最佳选择：是SQL还是NoSQL？
+http://database.ctocio.com.cn/264/12975264.shtml
+数据库SQL优化大总结之 百万级数据库优化方案
+http://database.ctocio.com.cn/468/13020968.shtml
