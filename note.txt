@@ -739,3 +739,14 @@ http://database.ctocio.com.cn/88/12784588.shtml
 http://database.ctocio.com.cn/264/12975264.shtml
 数据库SQL优化大总结之 百万级数据库优化方案
 http://database.ctocio.com.cn/468/13020968.shtml
+
+关注 Nosql/架构/时间管理/阅读分享
+http://blog.me115.com/
+前端高手
+http://www.zhangxinxu.com
+xujiansheng *
+http://www.xujiansheng.cn/
+
+--0210
+面向对象编程的弊端是什么？
+http://www.zhihu.com/question/20275578
