@@ -750,3 +750,15 @@ http://www.xujiansheng.cn/
 --0210
 面向对象编程的弊端是什么？
 http://www.zhihu.com/question/20275578
+
+-0212
+Node.js之绝对选择
+http://ourjs.com/detail/523cecc02374502403000001
+放过设计模式吧 (winter-cn 温大)
+http://www.cnblogs.com/winter-cn/archive/2012/03/10/2389575.html
+添加一个参考资料：
+温大以前写的博客：http://www.cnblogs.com/winter-cn/archive/2012/08/05/2623897.html
+Java 和 C# 相比就没有优势吗？
+http://www.zhihu.com/question/28131778
+一个静态类或者非静态类，多个方法依赖一个函数，如何实现？
+http://www.zhihu.com/question/28122097
