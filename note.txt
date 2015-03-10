@@ -762,3 +762,55 @@ Java 和 C# 相比就没有优势吗？
 http://www.zhihu.com/question/28131778
 一个静态类或者非静态类，多个方法依赖一个函数，如何实现？
 http://www.zhihu.com/question/28122097
+
+--0213
+水木社区
+http://www.newsmth.net/http://www.newsmth.net/
+威锋网
+http://www.feng.com/
+
+推荐靠谱程序员代购 @赵劼 他的微博 有详细信息 老赵的微博|微博
+http://www.zhihu.com/question/22981914
+http://zhaojie.me/zrx.html
+
+
+--0303
+http://www.zuoan.com/product.php?id=2372 咏薇堂曼灵精华
+硫磺皂洗脸  采乐洗剂  酮康唑洗剂 毛孔大
+http://mt.sohu.com/20150202/n408367776.shtml  毛孔粗大，油腻敏感，当心是脂溢性皮炎
+http://www.j1.com/myec/confirm.html    健一网
+降级论
+http://www.zhihu.com/search?q=%E9%99%8D%E7%BA%A7%E8%AE%BA&type=question
+
+
+
+商家详情 
+"poiId" : "54b4bfed9f106f0aa62021aa",
+http://192.168.40.184:8080/citylife/api/v1/poi/info/detail/{poiId}
+菜单（产品）详细
+"poiId" : "54b4bfed9f106f0aa62021aa",
+http://192.168.40.184:8080/citylife/api/v1/poi/products/detail/{poiId}
+poi照片
+"poiId" : "54b4bfed9f106f0aa62021aa",
+http://192.168.40.184:8080/citylife/api/v1/poi/images/detail/{poiId}
+
+
+http://182.92.1.110:8090/boss/admin
+
+service mysqld restart
+
+--0304
+http://www.uml.com.cn/communicate/2015-2-7.asp 快的打车的技术架构
+
+--0306
+http://get.jobdeer.com/744.get  如何写好技术简历 —— 实例、模板及工具
+
+http://www.waylau.com/build-angularjs-app-with-yeoman-in-windows/#%E8%AE%A4%E8%AF%86Yeoman 在Windows环境下用Yeoman构建AngularJS项目
+http://blog.jobbole.com/65399/ Yeoman官方教程：用Yeoman和AngularJS做Web应用
+
+
+--0309 
+http://my.oschina.net/flashsword?ft=blog
+http://my.oschina.net/huangyong/blog/161402 AOP 那点事儿（续集）
+http://git.oschina.net/huangyong/smart-framework 黄勇 / smart-framework
+http://code4craft.github.io/ 非典型代码强迫症
