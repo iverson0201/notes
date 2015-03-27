@@ -814,3 +814,29 @@ http://my.oschina.net/flashsword?ft=blog
 http://my.oschina.net/huangyong/blog/161402 AOP 那点事儿（续集）
 http://git.oschina.net/huangyong/smart-framework 黄勇 / smart-framework
 http://code4craft.github.io/ 非典型代码强迫症
+
+--0311
+http://blog.csdn.net/hackbuteer1/article/details/8035261  关于数组的几道面试题 
+http://blog.csdn.net/hackbuteer1/article/details/7622869  海量数据面试题整理 
+《leetcode题解》
+http://blog.csdn.net/worldwindjp/article/category/1879681  LeetCode Plus One Java版解题报告 
+http://blog.csdn.net/lanxu_yy/article/category/1636935   LeetCode题解
+http://www.tuicool.com/articles/VJb26ry  leetcode-java题解（每天更新）
+http://ac.jobdu.com/hhtproblems.php 九度OJ
+
+--0317
+http://www.cnblogs.com/winter-cn/archive/2011/03/01/1960267.html 面试时算法题的解答思路
+
+--0323
+springmvc list对象
+http://www.cnblogs.com/quanyongan/archive/2013/04/16/3024741.html 
+
+--0327
+http://blog.csdn.net/a837199685		蜗牛的专栏
+http://blog.csdn.net/a837199685/article/details/41443745	构建高并发高可用的电商平台架构实践 
+https://github.com/xiexiaodong/spring_mem_plugin	spring和memcached的一个插件
+http://www.zhihu.com/search?q=java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B&type=question java 多线程
+http://www.zhihu.com/question/28431865	怎样正确地参加电话面试（互联网技术）？
+http://www.zhihu.com/question/27575123	如何掌握java多线程，高并发，大数据方面的技能？
+
+
