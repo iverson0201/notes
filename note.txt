@@ -498,6 +498,8 @@ github
 https://github.com/khoubyari/spring-boot-rest-example/blob/master/src/test/java/com/khoubyari/example/test/HotelControllerTest.java
 如何为 SpringMVC 编写单元测试：REST API 篇
 http://lzxz1234.github.io/junit/2014/07/16/Unit-Testing-of-Spring-MVC-Controllers-REST-API/
+
+http://download.csdn.net/user/geloin/downloads/1 geloin的资源
 基于Spring-WS的Restful API的集成测试
 http://ningandjiao.iteye.com/blog/1982635
 
@@ -838,5 +840,38 @@ https://github.com/xiexiaodong/spring_mem_plugin	spring和memcached的一个插�
 http://www.zhihu.com/search?q=java%20%E5%A4%9A%E7%BA%BF%E7%A8%8B&type=question java 多线程
 http://www.zhihu.com/question/28431865	怎样正确地参加电话面试（互联网技术）？
 http://www.zhihu.com/question/27575123	如何掌握java多线程，高并发，大数据方面的技能？
+
+--0330
+http://blog.csdn.net/jackpk/article/details/19121777  spring mvc controller间跳转 重定向 传参
+http://www.cnblogs.com/quanyongan/archive/2013/04/16/3024741.html	SpringMVC @RequestBody接收Json对象字符串 @RequestBody List<User>
+
+--0331
+redis启动
+redis-server.exe redis.windows.
+
+抓包工具 火狐插件
+http://blog.csdn.net/feixue1232/article/details/8535212	使用firefox插件httperrequest,模拟发送及接收Json请求 
+
+--0401
+http://blog.csdn.net/v_july_v/article/details/7382693	教你如何迅速秒杀掉：99%的海量数据处理面试题
+http://zhaoyanblog.com/tag/elasticsearch	elasticsearch的java搜索语法
+
+
+--0403
+http://blog.csdn.net/xiaohulunb/article/details/37877435	elasticsearch__4__java操作之QueryBuilders构建搜索Query (小葫芦)
+http://bbs.csdn.net/topics/390886603?page=1#post-398238936
+我面试从来不带智能手机的。不会就坦诚的说不会，懒得弄虚作假。
+Collection的原理随便问，无非是数组、链表、队列、栈、哈希等等的CRUD
+你说的"字符串题目"似乎不难，我虽然不是搞算法的，但排列组合之类 水题还是可以切掉的
+js，我一般是"变量+函数"级的代码，闭包、继承、原型之类的语法题肯定跪，还有设计模式、架构啥的我也不太擅长
+要不然我去接收一下你的洗礼，如何?
+
+http://blog.csdn.net/lifetragedy/article/details/9751079 	think in java interview-高级开发人员面试宝典(二) 
+http://www.lanceyan.com/	数据挖掘-分词入门
+https://github.com/GourdErwa/my_note	my_note
+http://www.cnblogs.com/dennisit/archive/2013/04/08/3008631.html	基于Luence的分布式搜索引擎ElasticSearch搜索实例演示(Java API)
+http://blog.csdn.net/lifetragedy/article/category/1175320/2	 通向架构师的道路（第五天）之tomcat集群-群猫乱舞 
+http://git.oschina.net/	代码托管开源中国
+
 
 
