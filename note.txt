@@ -874,4 +874,60 @@ http://blog.csdn.net/lifetragedy/article/category/1175320/2	 通向架构师的�
 http://git.oschina.net/	代码托管开源中国
 
 
+--0407
+http://download.csdn.net/detail/cloudy8/8133499#	Intellij IDEA 14 Ultimate Keygen 序列号生成器(含源代码)
+http://www.lupaworld.com/article-251505-1.html	Java工具集-hutool 2.5.0发布 
 
+--0408
+http://nkcoder.github.io/archive.html	分布式搜索引擎ElasticSearch安装与配置	算法练习
+
+http://blog.csdn.net/monkey_d_meng/article/details/6251879	生产者/消费者问题的多种Java实现方式 
+
+--0415
+http://www.nowamagic.net/librarys/veda/detail/395  关于契约式编程的一些事情
+
+https://github.com/iverson0201/algorithm        《算法（第4版）》中的算法JAVA实现和练习题
+
+https://github.com/iverson0201/BasicAlgorithmsWithJava  算法（第4版）github
+
+http://zhidao.baidu.com/link?url=oaYPGFLZhvxHrdvdYTy8HkfqKkZJdbKyiPWLHXDLljpbwqhTEhR3B2Y-6Iyoe4D0ovbfbGrCdXnoUX6xFdvmWK 算法(第4版)给的两个jar包stdlib.jar和algs4.jar要怎么用？
+
+http://club.jd.com/bbsdetail/10944102_529012d0-749f-4077-b89c-48792dc14c68_1.html 算法(第4版)书内源码
+http://git.oschina.net/lialun/Algorithms/tree/master    算法(第4版)源码Algorithms
+
+
+http://git.oschina.net/search?search=algs4&type=project&language=Java&page=1&condition=default 算法algs4
+http://git.oschina.net/search?search=Algorithms&type=project&language=Java&condition=default 算法Algorithms
+
+
+--0416
+http://zhidao.baidu.com/link?url=5lBrJVhBF6yztq2bMoKvvYTQIf0uEIASmuXvo8umopupfLO3Ct4IM2rpJQFt-giY6u0KnAz4EV0GR2HUx8CZhW7kiSvZgXTExdGRO3QbvUS 计算机程序的构造与解释
+http://www.cnblogs.com/JeffreyZhao/archive/2009/07/15/recommended-reading-2-sicp.html 老赵点滴 - 追求编程之美
+http://t.cn/zQXcs9S  廖雪峰的官方网站
+
+--0422
+http://segmentfault.com/a/1190000000361999  [小帖士] 千万不要把Python脚本的第一行写成“#! /usr/bin/python”！
+http://lilydjwg.is-programmer.com/?page=3 依云's Blog
+------------------------------------------------------------(分割线)酷壳
+http://coolshell.cn/articles/4220.html 一些有意思的文章和资源
+http://coolshell.cn/articles/2082.html python程序员进化
+http://coolshell.cn/tag/pythondev/page/2 python
+http://www.csdn.net/article/2011-03-29/294863?1301452826 酷壳陈皓：如何学好C语言
+http://www.csdn.net/article/2011-03-30/294950 酷壳陈皓：如何学好C++语言
+http://coolshell.cn/articles/2583.html 一些重要的算法
+http://coolshell.cn/articles/12052.html Leetcode 编程训练
+https://github.com/haoel/leetcode leetcode
+http://zoomquiet.io/ python大妈
+http://cn.pycon.org/ PyCon2014
+http://www.itdiffer.com/ 老齐
+https://github.com/qiwsir/ITArticles 老齐的技术资料
+http://www.vimer.cn/category/appdev python手机端开发 
+https://github.com/dantezhu  python手机端开发 github
+
+--0612
+ctrl alt delete
+single 1
+敲入“b”，启动系统，即进入单用户模式
+
+
+passwd root

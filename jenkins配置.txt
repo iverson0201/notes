@@ -1,0 +1,9 @@
+1、配置用户
+系统管理 ---》 Configure Global Security ---》 Jenkins专有用户数据库 
+注册、登陆
+
+2、系统设置
+Maven Configuration ---》Maven Configuration ----》Settings in filesystem 
+File path：D:\Program Files (x86)\apache-maven-3.2.2-bin\apache-maven-3.2.2\conf\settings.xml
+
+
